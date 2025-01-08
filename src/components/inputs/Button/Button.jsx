@@ -1,18 +1,19 @@
-import React from 'react';
+import React from "react";
+import PropTypes from "prop-types";
+import classnames from "classnames";
 
-import PropTypes from 'prop-types';
+import "./button.scss";
 
-import './button.css';
-
-/** Primary UI component for user interaction */
-export const Button = ({ primary, backgroundColor, size, label, ...props }) => {
-  const mode = primary ? 'storybook-button--primary' : 'storybook-button--secondary';
+export const Button = ({ backgroundColor, variant, size, label }) => {
   return (
     <button
       type="button"
-      className={['storybook-button', `storybook-button--${size}`, mode].join(' ')}
+      className={classnames(
+        "blox-button",
+        `blox-button--${size}`,
+        `blox-button--${variant}`
+      )}
       style={backgroundColor && { backgroundColor }}
-      {...props}
     >
       {label}
     </button>
@@ -21,11 +22,11 @@ export const Button = ({ primary, backgroundColor, size, label, ...props }) => {
 
 Button.propTypes = {
   /** Is this the principal call to action on the page? */
-  primary: PropTypes.bool,
+  variant: PropTypes.oneOf(["contained", "outlined", "text"]),
   /** What background color to use */
   backgroundColor: PropTypes.string,
   /** How large should the button be? */
-  size: PropTypes.oneOf(['small', 'medium', 'large']),
+  size: PropTypes.oneOf(["small", "medium", "large"]),
   /** Button contents */
   label: PropTypes.string.isRequired,
   /** Optional click handler */
@@ -34,7 +35,7 @@ Button.propTypes = {
 
 Button.defaultProps = {
   backgroundColor: null,
-  primary: false,
-  size: 'medium',
+  variant: "contained",
+  size: "medium",
   onClick: undefined,
 };
