@@ -1,10 +1,13 @@
 import React, { createContext } from "react";
-import { theme } from "./index";
+import _merge from "lodash/merge";
+
+import { theme as defaults } from "./index";
 
 export const ThemeContext = createContext();
 
-export const ThemeProvider = ({ children }) => {
+export const ThemeProvider = ({ children, theme }) => {
+  const appTheme = _merge(defaults, theme);
   return (
-    <ThemeContext.Provider value={{ theme }}>{children}</ThemeContext.Provider>
+    <ThemeContext.Provider value={appTheme}>{children}</ThemeContext.Provider>
   );
 };

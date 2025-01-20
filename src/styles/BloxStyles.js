@@ -1,6 +1,9 @@
 import { createGlobalStyle } from "styled-components";
 
+import generateCSSVars from "./utils/generateCSSVars";
 import { theme } from "../theme";
+
+const CSSVars = generateCSSVars(theme);
 
 const BloxStyles = createGlobalStyle`  
 /* Base Styles */
@@ -23,7 +26,12 @@ const BloxStyles = createGlobalStyle`
   button {
     cursor: pointer;
     border: none;
-    background: ${theme.palette.primary.dark};
+    background: none;
+    font-size: 72px
+  }
+
+  :root {
+   ${CSSVars}
   }
 `;
 

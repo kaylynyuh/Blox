@@ -6,8 +6,6 @@ import { ThemeContext } from "../../../theme/ThemeProvider";
 import "./button.scss";
 
 export const Button = ({
-  backgroundColor = null,
-  color = "inherit",
   elevation = false,
   disabled = false,
   variant = "contained",
@@ -15,14 +13,11 @@ export const Button = ({
   children,
 }) => {
   const theme = useContext(ThemeContext);
-  console.log({ theme});
   return (
     <button
       type="button"
       className={classnames(
         "blox-button",
-        `blox-button--${color}`,
-        `blox-button--${backgroundColor}`,
         `blox-button--${size}`,
         `blox-button--${variant}`,
         {
@@ -30,6 +25,7 @@ export const Button = ({
           ["blox-button--elevation"]: elevation,
         }
       )}
+      style={{ backgroundColor: theme.palette.primary.main }}
     >
       {children}
     </button>
@@ -37,16 +33,12 @@ export const Button = ({
 };
 
 Button.propTypes = {
-  /** What background color to use */
-  backgroundColor: PropTypes.string,
   /** Button contents */
   children: PropTypes.oneOfType(
     PropTypes.arrayOf(PropTypes.node),
     PropTypes.node,
     PropTypes.string
   ),
-  /** What text color to use */
-  color: PropTypes,
   /** Should the button be elevated */
   elevation: PropTypes.bool,
   /** Optional click handler */
