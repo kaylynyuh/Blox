@@ -25,7 +25,6 @@ export const Button = ({
           ["blox-button--elevation"]: elevation,
         }
       )}
-      style={{ backgroundColor: theme.palette.primary.main }}
     >
       {children}
     </button>

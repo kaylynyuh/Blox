@@ -7,7 +7,7 @@ const theme = {
   palette: {
     primary: {
       light: "#e57373",
-      main: "#f44336",
+      main: "#fff000",
       dark: "#d32f2f",
     },
   },
@@ -16,7 +16,7 @@ const theme = {
 function App() {
   return (
     <ThemeProvider theme={theme}>
-      <BloxStyles />
+      <BloxStyles theme={theme} />
       <div className="card">
         <Button>Button</Button>
       </div>
