@@ -1,8 +1,7 @@
-import React, { useContext } from "react";
+import React from "react";
 import PropTypes from "prop-types";
 import classnames from "classnames";
 
-import { ThemeContext } from "../../../theme/ThemeProvider";
 import "./button.scss";
 
 export const Button = ({
@@ -12,7 +11,6 @@ export const Button = ({
   size = "medium",
   children,
 }) => {
-  const theme = useContext(ThemeContext);
   return (
     <button
       type="button"

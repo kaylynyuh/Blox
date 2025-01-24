@@ -5,22 +5,25 @@
   border-radius: 3em;
   line-height: 1;
   font-family: "Nunito Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  background-color: var(--palette-primary-main);
+  background-color: transparent;
 }
 
 .blox-button--contained {
-  color: white;
+  color: var(--button-variant-contained-color);
+  background-color: var(--button-variant-contained-backgroundColor);
+  border: var(--button-variant-contained-border);
 }
 
 .blox-button--outlined {
-  box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 0px 1px inset;
-  background-color: transparent;
-  color: #333;
+  color: var(--button-variant-outlined-color);
+  background-color: var(--button-variant-outlined-backgroundColor);
+  border: var(--button-variant-outlined-border);
 }
 
 .blox-button--text {
-  background-color: transparent;
-}
+  color: var(--button-variant-text-color);
+  background-color: var(--button-variant-text-backgroundColor);
+  border: var(--button-variant-text-border);}
 
 .blox-button--small {
   padding: 10px 16px;

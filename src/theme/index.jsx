@@ -1,7 +1,4 @@
-export const theme = {
-  //--------------------------------------------------------------------------------
-  // Colors
-  //--------------------------------------------------------------------------------
+const colors = {
   palette: {
     primary: {
       light: "#e3f2fd",
@@ -32,6 +29,35 @@ export const theme = {
       light: "#81c784",
       main: "#66bb6a",
       dark: "#388e3c",
+    },
+  },
+};
+
+export const theme = {
+  //--------------------------------------------------------------------------------
+  // Colors
+  //--------------------------------------------------------------------------------
+  ...colors,
+  //--------------------------------------------------------------------------------
+  // Components
+  //--------------------------------------------------------------------------------
+  button: {
+    variant: {
+      contained: {
+        backgroundColor: colors.palette.primary.main,
+        color: "#fff",
+        border: 'none',
+      },
+      outlined: {
+        backgroundColor: "transparent",
+        color: colors.palette.primary.main,
+        border: `1px solid ${colors.palette.primary.main}`,
+      },
+      text: {
+        backgroundColor: "transparent",
+        color: colors.palette.primary.main,
+        border: `1px solid ${colors.palette.primary.main}`,
+      },
     },
   },
 };

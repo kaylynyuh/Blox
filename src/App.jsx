@@ -6,9 +6,9 @@ import "./App.css";
 const theme = {
   palette: {
     primary: {
-      light: "#e57373",
-      main: "#fff000",
-      dark: "#d32f2f",
+      light: "#03c1f4",
+      main: "#08a1f7",
+      dark: "#004fe1",
     },
   },
 };

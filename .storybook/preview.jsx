@@ -7,6 +7,7 @@ const preview = {
   decorators: [
     (Story) => (
       <ThemeProvider>
+        <BloxStyles />
         {/* 👇 Decorators in Storybook also accept a function. Replace <Story/> with Story() to enable it  */}
         <Story />
       </ThemeProvider>
