@@ -1,7 +1,7 @@
 import { createGlobalStyle } from "styled-components";
 
 import generateCSSVars from "./utils/generateCSSVars";
-import { theme as defaults } from "../theme";
+import { generateTheme } from "../theme";
 
 const BloxStyles = createGlobalStyle`  
   /* Base Styles */
@@ -28,7 +28,7 @@ const BloxStyles = createGlobalStyle`
       font-size: 72px
     }
     :root {
-      ${(props) => generateCSSVars({ ...props.theme, ...defaults })};
+      ${(props) => generateCSSVars({ ...generateTheme(props.theme) })};
     }
 `;
 

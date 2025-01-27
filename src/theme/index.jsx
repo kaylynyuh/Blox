@@ -1,4 +1,10 @@
-const colors = {
+// Define defaults for color palette in a static object.
+// Set value to theme object like theme.thing.if.it.exists || defaults.thing
+
+const defaultPalette = {
+  //--------------------------------------------------------------------------------
+  // Colors
+  //--------------------------------------------------------------------------------
   palette: {
     primary: {
       light: "#e3f2fd",
@@ -33,31 +39,30 @@ const colors = {
   },
 };
 
-export const theme = {
-  //--------------------------------------------------------------------------------
-  // Colors
-  //--------------------------------------------------------------------------------
-  ...colors,
-  //--------------------------------------------------------------------------------
-  // Components
-  //--------------------------------------------------------------------------------
-  button: {
-    variant: {
-      contained: {
-        backgroundColor: colors.palette.primary.main,
-        color: "#fff",
-        border: 'none',
-      },
-      outlined: {
-        backgroundColor: "transparent",
-        color: colors.palette.primary.main,
-        border: `1px solid ${colors.palette.primary.main}`,
-      },
-      text: {
-        backgroundColor: "transparent",
-        color: colors.palette.primary.main,
-        border: `1px solid ${colors.palette.primary.main}`,
+export const generateTheme = (theme) => {
+  console.log('generateTheme: ', theme);
+  return {
+    //--------------------------------------------------------------------------------
+    // Components
+    //--------------------------------------------------------------------------------
+    button: {
+      variant: {
+        contained: {
+          backgroundColor: theme.palette.primary.main || defaultPalette.palette.primary.main,
+          color: "#fff",
+          border: "none",
+        },
+        outlined: {
+          backgroundColor: "transparent",
+          color: theme.palette.primary.main || defaultPalette.palette.primary.main,
+          border: `1px solid ${theme.palette.primary.main || defaultPalette.palette.primary.main}`,
+        },
+        text: {
+          backgroundColor: "transparent",
+          color: theme.palette.primary.main || defaultPalette.palette.primary.main,
+          border: `1px solid ${theme.palette.primary.main || defaultPalette.palette.primary.main}`,
+        },
       },
     },
-  },
+  };
 };
