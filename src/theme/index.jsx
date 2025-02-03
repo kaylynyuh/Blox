@@ -1,7 +1,4 @@
-// Define defaults for color palette in a static object.
-// Set value to theme object like theme.thing.if.it.exists || defaults.thing
-
-const defaultPalette = {
+const defaults = {
   //--------------------------------------------------------------------------------
   // Colors
   //--------------------------------------------------------------------------------
@@ -40,7 +37,6 @@ const defaultPalette = {
 };
 
 export const generateTheme = (theme) => {
-  console.log('generateTheme: ', theme);
   return {
     //--------------------------------------------------------------------------------
     // Components
@@ -48,19 +44,19 @@ export const generateTheme = (theme) => {
     button: {
       variant: {
         contained: {
-          backgroundColor: theme.palette.primary.main || defaultPalette.palette.primary.main,
+          backgroundColor: theme.palette.primary.main || defaults.palette.primary.main,
           color: "#fff",
           border: "none",
         },
         outlined: {
           backgroundColor: "transparent",
-          color: theme.palette.primary.main || defaultPalette.palette.primary.main,
-          border: `1px solid ${theme.palette.primary.main || defaultPalette.palette.primary.main}`,
+          color: theme.palette.primary.main || defaults.palette.primary.main,
+          border: `1px solid ${theme.palette.primary.main || defaults.palette.primary.main}`,
         },
         text: {
           backgroundColor: "transparent",
-          color: theme.palette.primary.main || defaultPalette.palette.primary.main,
-          border: `1px solid ${theme.palette.primary.main || defaultPalette.palette.primary.main}`,
+          color: theme.palette.primary.main || defaults.palette.primary.main,
+          border: `1px solid ${theme.palette.primary.main || defaults.palette.primary.main}`,
         },
       },
     },
